@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex items-center gap-3">
           <Link
             href={"https://github.com/VedantBhawsar/"}
-            className="dark:hover:text-white hover:text-black transition-all ease-in duration-200"
+            className=" hover:text-black dark:hover:text-white transition-all ease-in duration-200"
             target="_blank"
           >
             <BsTwitter />
@@ -20,7 +20,7 @@ export default function Footer() {
           <Link
             href={"https://www.linkedin.com/in/vedantbhawsar"}
             target="_blank"
-            className="darK:hover:text-white hover:text-black transition-all ease-in duration-200"
+            className=" hover:text-black dark:hover:text-white transition-all ease-in duration-200"
           >
             <BsGithub />
           </Link>

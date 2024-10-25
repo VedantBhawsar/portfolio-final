@@ -18,7 +18,7 @@ export default function About() {
       id="about"
     >
       <SectionHeading>About me</SectionHeading>
-      <p className="mb-3">
+      <motion.p className="mb-3">
         I am currently pursuing a degree in{" "}
         <span className="font-medium">Computer Engineering</span> and am in my
         third year of studies. My journey into the world of programming was
@@ -26,8 +26,8 @@ export default function About() {
         <span className="font-medium">problem-solving</span> and the thrill of
         tackling challenging tasks. One of my favorite aspects of programming is
         the satisfaction that comes from finding solutions to complex problems.
-      </p>
-      <p className="mb-3">
+      </motion.p>
+      <motion.p className="mb-3">
         During my studies, I have worked on several projects, with the most
         notable being <span className="font-medium">Ninjanex</span>, an anime
         streaming application. This project was built using{" "}
@@ -38,8 +38,8 @@ export default function About() {
         <span className="font-medium">PostgreSQL database</span>. This
         experience solidified my skills and confirmed my love for full-stack
         development.
-      </p>
-      <p className="mb-3">
+      </motion.p>
+      <motion.p className="mb-3">
         I am particularly comfortable with{" "}
         <span className="font-medium">Next.js 14</span>,{" "}
         <span className="font-medium">Node.js</span>, and{" "}
@@ -50,9 +50,9 @@ export default function About() {
         and my continuous learning mindset are preparing me for my goal of
         becoming a{" "}
         <span className="font-medium">full-time full-stack developer</span>.
-      </p>
+      </motion.p>
 
-      <p>
+      <motion.p>
         Beyond programming, I enjoy{" "}
         <span className="font-medium">traveling</span>,{" "}
         <span className="font-medium">gaming</span>, and{" "}
@@ -61,7 +61,7 @@ export default function About() {
         excited to continue learning and growing in the tech field and look
         forward to contributing to innovative projects as a full-stack
         developer.
-      </p>
+      </motion.p>
     </motion.section>
   );
 }

@@ -2,6 +2,7 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
+// @ts-ignore
 import {
   VerticalTimeline,
   VerticalTimelineElement,

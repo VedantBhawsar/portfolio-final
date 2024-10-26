@@ -26,8 +26,8 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-gray-50 text-gray-950 relative  dark:bg-black dark:text-gray-50 dark:text-opacity-90`}
       >
-        <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[0rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[30rem] dark:bg-[#946263] animate-float"></div>
-        <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[40rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[30rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394] animate-pulseSlow"></div>
+        <div className="bg-[#fbe2e3] hidden md:block   absolute top-[-6rem] -z-10 right-[0rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[30rem] dark:bg-[#946263] animate-float"></div>
+        <div className="bg-[#dbd7fb] hidden md:block  absolute top-[-1rem] -z-10 left-[40rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[30rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394] animate-pulseSlow"></div>
 
         <ThemeContextProvider>
           <ActiveSectionContextProvider>

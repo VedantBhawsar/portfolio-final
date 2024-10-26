@@ -80,7 +80,7 @@ export default function Intro() {
         }}
       >
         <a
-          className="flex gap-2 items-center py-3 px-7 bg-white rounded-full transition cursor-pointer outline-none active:scale-95 group borderBlack dark:bg-white/10"
+          className="flex gap-2 items-center py-3 px-7 bg-gray-50 rounded-full transition cursor-pointer outline-none active:scale-95 group borderBlack dark:bg-white/10"
           href="/resume.pdf"
           target="_blank"
         >
@@ -99,22 +99,23 @@ export default function Intro() {
           Contact me here{" "}
           <BsArrowRight className="opacity-70 transition group-hover:opacity-95 group-hover:scale-105 group-hover:translate-x-1" />
         </Link>
+        <div className="flex gap-3 w-full md:w-fit justify-center">
+          <a
+            className="flex gap-2 items-center p-4 text-gray-700 bg-white rounded-full transition cursor-pointer active:scale-105 group borderBlack dark:bg-white/10 dark:text-white/60 hover:text-gray-950"
+            href="https://www.linkedin.com/in/vedantbhawsar/"
+            target="_blank"
+          >
+            <BsLinkedin className="transition group-hover:scale-110 " />
+          </a>
 
-        <a
-          className="flex gap-2 items-center p-4 text-gray-700 bg-white rounded-full transition cursor-pointer active:scale-105 group borderBlack dark:bg-white/10 dark:text-white/60 hover:text-gray-950"
-          href="https://www.linkedin.com/in/vedantbhawsar/"
-          target="_blank"
-        >
-          <BsLinkedin className="transition group-hover:scale-110 " />
-        </a>
-
-        <a
-          className="flex gap-2 items-center p-4 text-gray-700 bg-white rounded-full transition cursor-pointer active:scale-105 group text-[1.35rem] borderBlack dark:bg-white/10 dark:text-white/60 hover:text-gray-950"
-          href="https://github.com/Vedantbhawsar"
-          target="_blank"
-        >
-          <FaGithubSquare className="transition group-hover:scale-110 " />
-        </a>
+          <a
+            className="flex gap-2 items-center p-4 text-gray-700 bg-white rounded-full transition cursor-pointer active:scale-105 group text-[1.35rem] borderBlack dark:bg-white/10 dark:text-white/60 hover:text-gray-950"
+            href="https://github.com/Vedantbhawsar"
+            target="_blank"
+          >
+            <FaGithubSquare className="transition group-hover:scale-110 " />
+          </a>
+        </div>
       </motion.div>
     </section>
   );

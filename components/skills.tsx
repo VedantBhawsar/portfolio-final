@@ -16,15 +16,17 @@ const categorizedSkills = {
     "React",
     "Next.js",
     "Redux",
+    "Strapi",
     "Zustand",
     "Tailwind CSS",
     "Framer Motion",
-    "Bootstrap",
+    "Material UI",
     "Chakra UI",
   ],
   "Backend Technologies": [
     "Node.js",
     "Express.js",
+    "Socket.io",
     "NestJS",
     "Apollo Server",
     "Prisma",
@@ -90,7 +92,7 @@ export default function Skills() {
               {skills.map((skill, index) => (
                 <motion.li
                   key={index}
-                  className="bg-white border border-gray-300 dark:border-gray-700 rounded-xl px-5 py-2 dark:bg-white/5 dark:hover:bg-white/10"
+                  className="bg-white hover:bg-gray-100 border hover:scale-105  transition-all cursor-pointer   border-gray-300 dark:border-gray-700 rounded-xl px-5 py-2 dark:bg-white/5 dark:hover:bg-white/10"
                   variants={fadeInAnimationVariants}
                   initial="initial"
                   whileInView="animate"

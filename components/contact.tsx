@@ -13,14 +13,16 @@ export default function Contact() {
 
   return (
     <motion.section
-      id="contact"
+      id="Contact"
       ref={ref}
       className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
       initial={{
         opacity: 0,
+        y: 100,
       }}
       whileInView={{
         opacity: 1,
+        y: 0,
       }}
       transition={{
         duration: 1,
@@ -42,33 +44,76 @@ export default function Contact() {
       <form
         className="mt-10 flex flex-col dark:text-black"
         action={async (formData) => {
-          await sendEmail(formData).then(({ message, error }) => {
-            if (error) {
-              toast.error(message);
-            } else {
-              toast.success(message);
-            }
-          });
+          await sendEmail(formData)
+            .then(({ message, error }) => {
+              if (error) {
+                toast.error(message);
+              } else {
+                toast.success(message);
+              }
+            })
+            .catch((error) => {
+              toast.error(error.message);
+            });
         }}
       >
-        <input
-          className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+        <motion.input
+          initial={{
+            y: 100,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 100,
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.2,
+            ease: "linear",
+          }}
+          className="h-14 px-4 rounded-lg borderBlack dark:bg-white/5 dark:caret-slate-100 dark:bg-opacity-100 dark:focus:bg-opacity-100 transition-all dark:outline-none dark:text-gray-100"
           name="senderEmail"
           type="email"
           required
           maxLength={500}
           placeholder="Your email"
         />
-        <input
-          className="h-14 px-4  mt-3  rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+        <motion.input
+          initial={{
+            y: 100,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 100,
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.3,
+            ease: "linear",
+          }}
+          className="h-14 px-4  mt-3  rounded-lg borderBlack dark:caret-slate-100 dark:bg-white/5 dark:bg-opacity-100 dark:focus:bg-opacity-100 transition-all dark:outline-none  dark:text-gray-100"
           name="subject"
           type="text"
           required
           maxLength={500}
           placeholder="Subject"
         />
-        <textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+        <motion.textarea
+          initial={{
+            y: 100,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 100,
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.4,
+            ease: "linear",
+          }}
+          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white/5 dark:text-gray-100 dark:caret-slate-100 dark:bg-opacity-100 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           name="message"
           placeholder="Your message"
           required

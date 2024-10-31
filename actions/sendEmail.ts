@@ -1,25 +1,33 @@
 "use server";
 
-import { validateString } from "@/lib/utils";
+import { validateEmail, validateEmailData } from "@/lib/utils";
 import { emailTransporter } from "@/lib/emailTransport";
+
+const MIN_LENGTH = 100; // minimum message length
 
 export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get("senderEmail") as string;
   const message = formData.get("message") as string;
   const subject = formData.get("subject") as string;
 
+  if (!validateEmailData(message.trim(), MIN_LENGTH)) {
+    throw new Error("Message is short long");
+  }
+
+  if (!validateEmail(senderEmail.trim())) {
+    throw new Error("Invalid email");
+  }
   try {
     await emailTransporter.sendMail({
-      to: senderEmail,
-      subject: subject,
-      html: `<p>${message}</p>`,
+      to: process.env.RECEIVER_EMAIL,
+      subject: `PORTFOLIO WEBSITE - from ${senderEmail.trim()} - ${subject.trim()}`, // subject line for identifying the email
+      html: `<div> <p>${message.trim()}</p>
+      <p>Sent from Vedant's Portfolio Website by ${senderEmail}</p>
+      </div>`,
     });
   } catch (error: any) {
     console.log(error);
-    return {
-      error: true,
-      message: "Something went wrong",
-    };
+    throw new Error("Email could not be sent");
   }
   return {
     error: false,

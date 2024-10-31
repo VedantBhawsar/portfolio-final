@@ -1,6 +1,7 @@
 import React from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import { experimental_useFormStatus as useFormStatus } from "react-dom";
+import { TailSpin } from "react-loader-spinner";
 
 export default function SubmitBtn() {
   const { pending } = useFormStatus();
@@ -12,10 +13,21 @@ export default function SubmitBtn() {
       disabled={pending}
     >
       {pending ? (
-        <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+        <div className="flex items-center gap-3">
+          <TailSpin
+            visible={true}
+            height="20"
+            width="20"
+            color="#fff"
+            ariaLabel="loading"
+            radius="1"
+            wrapperStyle={{}}
+          />
+          {/* <span className="text-xs">Sending</span> */}
+        </div>
       ) : (
         <>
-          Submit{" "}
+          Send{" "}
           <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
         </>
       )}

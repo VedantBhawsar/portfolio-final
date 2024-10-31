@@ -54,7 +54,7 @@ export default function Contact() {
         }}
       >
         <motion.input
-          className="h-14 px-4 rounded-lg borderBlack dark:bg-white/5 dark:caret-slate-100 dark:bg-opacity-100 dark:focus:bg-opacity-100 transition-all dark:outline-none dark:text-gray-100"
+          className="h-14 px-4 rounded-lg borderBlack dark:bg-white/5 dark:caret-slate-100 dark:bg-opacity-100 dark:focus:bg-opacity-100 transition-all dark:outline-none dark:text-gray-100 dark:border-white/20 dark:focus:border-white dark:focus:outline-1"
           name="senderEmail"
           type="email"
           required
@@ -62,7 +62,7 @@ export default function Contact() {
           placeholder="Your email"
         />
         <motion.input
-          className="h-14 px-4 mt-3 rounded-lg borderBlack dark:caret-slate-100 dark:bg-white/5 dark:bg-opacity-100 dark:focus:bg-opacity-100 transition-all dark:outline-none dark:text-gray-100"
+          className="h-14 px-4 mt-3 rounded-lg borderBlack dark:caret-slate-100 dark:bg-white/5 dark:bg-opacity-100 dark:focus:bg-opacity-100 transition-all dark:outline-none dark:text-gray-100 dark:border-white/20 dark:focus:border-white dark:focus:outline-1"
           name="subject"
           type="text"
           required
@@ -70,7 +70,7 @@ export default function Contact() {
           placeholder="Subject"
         />
         <motion.textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white/5 dark:text-gray-100 dark:caret-slate-100 dark:bg-opacity-100 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white/5 dark:text-gray-100 dark:caret-slate-100 dark:bg-opacity-100 dark:focus:bg-opacity-100 transition-all dark:outline-none dark:border-white/20 dark:focus:border-white dark:focus:outline-1"
           name="message"
           placeholder="Your message"
           required

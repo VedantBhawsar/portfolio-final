@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { use, useEffect, useRef } from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+  const formRef = useRef<HTMLFormElement>(null);
 
   return (
     <motion.section
@@ -23,9 +24,6 @@ export default function Contact() {
       whileInView={{
         opacity: 1,
         y: 0,
-      }}
-      transition={{
-        duration: 1,
       }}
       viewport={{
         once: true,
@@ -42,15 +40,13 @@ export default function Contact() {
       </p>
 
       <form
+        ref={formRef}
         className="mt-10 flex flex-col dark:text-black"
         action={async (formData) => {
           await sendEmail(formData)
             .then(({ message, error }) => {
-              if (error) {
-                toast.error(message);
-              } else {
-                toast.success(message);
-              }
+              toast.success(message);
+              formRef.current?.reset();
             })
             .catch((error) => {
               toast.error(error.message);
@@ -58,19 +54,6 @@ export default function Contact() {
         }}
       >
         <motion.input
-          initial={{
-            y: 100,
-            opacity: 0,
-          }}
-          animate={{
-            y: 0,
-            opacity: 100,
-          }}
-          transition={{
-            duration: 1,
-            delay: 0.2,
-            ease: "linear",
-          }}
           className="h-14 px-4 rounded-lg borderBlack dark:bg-white/5 dark:caret-slate-100 dark:bg-opacity-100 dark:focus:bg-opacity-100 transition-all dark:outline-none dark:text-gray-100"
           name="senderEmail"
           type="email"
@@ -79,20 +62,7 @@ export default function Contact() {
           placeholder="Your email"
         />
         <motion.input
-          initial={{
-            y: 100,
-            opacity: 0,
-          }}
-          animate={{
-            y: 0,
-            opacity: 100,
-          }}
-          transition={{
-            duration: 1,
-            delay: 0.3,
-            ease: "linear",
-          }}
-          className="h-14 px-4  mt-3  rounded-lg borderBlack dark:caret-slate-100 dark:bg-white/5 dark:bg-opacity-100 dark:focus:bg-opacity-100 transition-all dark:outline-none  dark:text-gray-100"
+          className="h-14 px-4 mt-3 rounded-lg borderBlack dark:caret-slate-100 dark:bg-white/5 dark:bg-opacity-100 dark:focus:bg-opacity-100 transition-all dark:outline-none dark:text-gray-100"
           name="subject"
           type="text"
           required
@@ -100,19 +70,6 @@ export default function Contact() {
           placeholder="Subject"
         />
         <motion.textarea
-          initial={{
-            y: 100,
-            opacity: 0,
-          }}
-          animate={{
-            y: 0,
-            opacity: 100,
-          }}
-          transition={{
-            duration: 1,
-            delay: 0.4,
-            ease: "linear",
-          }}
           className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white/5 dark:text-gray-100 dark:caret-slate-100 dark:bg-opacity-100 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           name="message"
           placeholder="Your message"

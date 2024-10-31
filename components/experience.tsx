@@ -11,6 +11,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
+import { motion } from "framer-motion";
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
@@ -48,15 +49,33 @@ export default function Experience() {
               <h3 className="font-semibold capitalize">{item.title}</h3>
               <p className="font-normal !mt-0">{item.location}</p>
               <hr className="my-2 border-gray-800 " />
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
+              <p className="!mt-1 !font-normal  text-gray-700 dark:text-white/80 bg-black/5 p-2  dark:bg-white/10  rounded-md">
                 {item.description}
               </p>
               <p>Key points:-</p>
               <ul className="list-disc">
                 {item?.describe?.map((item: string, index: number) => (
-                  <li className="ml-5" key={index}>
+                  <motion.li
+                    initial={{
+                      opacity: 0,
+                      y: 100,
+                    }}
+                    viewport={{
+                      once: true,
+                    }}
+                    whileInView={{
+                      opacity: 100,
+                      y: 0,
+                    }}
+                    transition={{
+                      type: "tween",
+                      delay: (2.5 * index) / 10,
+                    }}
+                    className="ml-5"
+                    key={index}
+                  >
                     {item}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </VerticalTimelineElement>

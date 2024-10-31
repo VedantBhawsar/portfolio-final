@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Meteors } from "./ui/meteors";
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -35,7 +36,7 @@ export default function Project({
       className="group"
     >
       <section className="bg-gray-100 group max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-gray-500/10 dark:hover:bg-white/5">
-        <Meteors className="hidden group-hover:block" />{" "}
+        <Meteors number={40} className=" group-hover:hidden block" />{" "}
         <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
           <Link
             target="_blank"
@@ -75,13 +76,44 @@ export default function Project({
           src={imageUrl}
           alt="Project I worked on"
           quality={95}
-          onClick={() => window.open(githubUrl)}
           className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl transition group-hover:scale-[1.04] group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2
           group-even:group-hover:translate-x-3
           group-even:group-hover:translate-y-3
           group-even:group-hover:rotate-2
-          group-even:right-[initial] group-even:-left-40 cursor-pointer"
+          group-even:right-[initial] group-even:-left-40 "
         />
+      </section>
+    </motion.div>
+  );
+}
+
+export function CreateProject({}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+  });
+  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
+  return (
+    <motion.div
+      ref={ref}
+      style={{
+        scale: scaleProgess,
+        opacity: opacityProgess,
+      }}
+    >
+      <section className="bg-gray-100 group flex flex-col gap-2 items-center justify-center max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-gray-500/10 dark:hover:bg-white/5">
+        <Meteors />
+        <h1 className="text-black text-lg">Adding soon...</h1>
+        <Link
+          href={"https://github.com/vedantBhawsar"}
+          target="_blank"
+          className=" text-black"
+        >
+          <Button variant={"outline"}>Check Github</Button>
+        </Link>
       </section>
     </motion.div>
   );

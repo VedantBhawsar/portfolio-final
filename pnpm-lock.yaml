@@ -37,7 +37,7 @@ importers:
         version: 0.4.0
       autoprefixer:
         specifier: 10.4.14
-        version: 10.4.14(postcss@8.4.24)
+        version: 10.4.14(postcss@8.4.31)
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -63,8 +63,8 @@ importers:
         specifier: ^6.9.15
         version: 6.9.16
       postcss:
-        specifier: 8.4.24
-        version: 8.4.24
+        specifier: 8.4.31
+        version: 8.4.31
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -2789,14 +2789,14 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  autoprefixer@10.4.14(postcss@8.4.24):
+  autoprefixer@10.4.14(postcss@8.4.31):
     dependencies:
       browserslist: 4.24.2
       caniuse-lite: 1.0.30001676
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.1.1
-      postcss: 8.4.24
+      postcss: 8.4.31
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:

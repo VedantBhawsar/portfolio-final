@@ -1,7 +1,5 @@
 "use client";
-
-import Image from "next/image";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
@@ -9,12 +7,25 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import profileImg from "@/public/photo.jpg";
 import { TypewriterEffect } from "./ui/typewriter-effect";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const [loading, setLoading] = useState<boolean>(true)
+
+
+  useEffect(() => {
+    setLoading(false)
+  }, [])
+
+  if (loading) {
+    return (
+      <div className="h-screen w-screen flex justify-center items-center  dark:bg-black/80 obsolute ">
+        <p className='text-lg text-slate-600'>Loading portfolio. Please wait...</p>
+      </div>
+    )
+  }
 
   return (
     <section
@@ -123,7 +134,7 @@ export default function Intro() {
 
 export function GridBackground({ children }: { children: ReactNode }) {
   return (
-    <div className="h-[50rem] w-full   dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
+    <div className="h-[60rem] w-full dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
       {/* Radial gradient for the container to give a faded look */}
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       {children}

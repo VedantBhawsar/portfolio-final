@@ -106,13 +106,18 @@ export function CreateProject({}) {
     >
       <section className="bg-gray-100 group flex flex-col gap-2 items-center justify-center max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-gray-500/10 dark:hover:bg-white/5">
         <Meteors />
-        <h1 className="text-black text-lg">Adding soon...</h1>
+        <h1 className="text-black dark:text-white text-lg">Adding soon...</h1>
         <Link
           href={"https://github.com/vedantBhawsar"}
           target="_blank"
           className=" text-black"
         >
-          <Button variant={"outline"}>Check Github</Button>
+          <Button
+            variant={"outline"}
+            className="dark:text-white dark:border-white/50 bg-white/5 hover:bg-white/10"
+          >
+            Check Github
+          </Button>
         </Link>
       </section>
     </motion.div>

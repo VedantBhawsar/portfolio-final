@@ -3,7 +3,6 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import twitterImage from "@/public/twitter.png";
-import rmtdevImg from "@/public/rmtdev.png";
 import ninjanexImage from "@/public/ninjanex.png";
 import petShopImage from "@/public/petshop.png";
 

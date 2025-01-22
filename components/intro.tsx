@@ -1,143 +1,135 @@
 "use client";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
-import { FaGithubSquare } from "react-icons/fa";
+import { FiArrowUpRight } from "react-icons/fi";
+import { FaGithub, FaLinkedin, FaFileDownload } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import { TypewriterEffect } from "./ui/typewriter-effect";
 
-export default function Intro() {
+export default function Hero() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-  const [loading, setLoading] = useState<boolean>(true)
-
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(false)
-  }, [])
+    setLoading(false);
+  }, []);
 
   if (loading) {
     return (
-      <div className="h-screen w-screen flex justify-center items-center  dark:bg-black/80 obsolute ">
-        <p className='text-lg text-slate-600'>Loading portfolio. Please wait...</p>
+      <div className="h-screen w-screen flex justify-center items-center dark:bg-black/80">
+        <p className="text-lg text-slate-600 dark:text-slate-400">
+          Crafting digital experiences...
+        </p>
       </div>
-    )
+    );
   }
 
   return (
-    <section
-      ref={ref}
-      id="home"
-      className="mb-28 text-center sm:mb-0 max-w-[60rem] scroll-mt-[100rem]"
-    >
-      <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
+    <>
+      <section
+        ref={ref}
+        id="home"
+        className="relative z-10 flex h-screen flex-col items-center justify-center px-4 sm:px-6 lg:px-8"
       >
-        <TypewriterEffect
-          words={[
-            {
-              text: "Hello, I'm Vedant.",
-              className: "font-bold",
-            },
-            {
-              text: "I'm a",
-              className: "",
-            },
-            {
-              text: "full-stack developer",
-              className: "font-bold",
-            },
-            {
-              text: "with",
-              className: "",
-            },
-            {
-              text: "2 years",
-              className: "font-bold",
-            },
-            {
-              text: "of experience. I enjoy",
-              className: "",
-            },
-
-            {
-              text: "sites & apps.",
-              className: "italic",
-            },
-
-            {
-              text: "My focus is",
-              className: "",
-            },
-            {
-              text: "React (Next.js)",
-              className: "underline",
-            },
-          ]}
-        />
-      </motion.h1>
-
-      <motion.div
-        className="flex flex-col gap-3 justify-center items-center px-4 text-lg font-medium sm:flex-row"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.1,
-        }}
-      >
-        <a
-          className="flex gap-2 items-center py-3 px-7 bg-gray-50 rounded-full transition cursor-pointer outline-none active:scale-95 group borderBlack dark:bg-white/10"
-          href="/resume.pdf"
-          target="_blank"
-        >
-          Download Resume{" "}
-          <HiDownload className="opacity-60 transition group-hover:opacity-95 group-hover:scale-105 group-hover:translate-y-1" />
-        </a>
-
-        <Link
-          href="#contact"
-          className="flex gap-2 items-center py-3 px-7 dark:text-white    bg-transparent border border-gray-300  hover:opacity-80 rounded-full transition outline-none active:scale-95 group  dark:hover:bg-gray-950"
-          onClick={() => {
-            setActiveSection("Contact");
-            setTimeOfLastClick(Date.now());
-          }}
-        >
-          Contact me here{" "}
-          <BsArrowRight className="opacity-70 transition group-hover:opacity-95 group-hover:scale-105 group-hover:translate-x-1" />
-        </Link>
-        <div className="flex gap-3 w-full md:w-fit justify-center">
-          <a
-            className="flex gap-2 items-center p-4 text-gray-700 bg-white rounded-full transition cursor-pointer active:scale-105 group borderBlack dark:bg-white/10 dark:text-white/60 hover:text-gray-950"
-            href="https://www.linkedin.com/in/vedantbhawsar/"
-            target="_blank"
+        <div className="max-w-4xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <BsLinkedin className="transition group-hover:scale-110 " />
-          </a>
+            <h1 className="text-gradient bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-6xl md:text-7xl">
+              Vedant Bhawsar
+            </h1>
+          </motion.div>
 
-          <a
-            className="flex gap-2 items-center p-4 text-gray-700 bg-white rounded-full transition cursor-pointer active:scale-105 group text-[1.35rem] borderBlack dark:bg-white/10 dark:text-white/60 hover:text-gray-950"
-            href="https://github.com/Vedantbhawsar"
-            target="_blank"
+          <motion.h2
+            className="mt-6 text-xl font-medium text-gray-600 dark:text-gray-300 sm:text-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <FaGithubSquare className="transition group-hover:scale-110 " />
-          </a>
+            Full-Stack Developer & UI Enthusiast
+          </motion.h2>
+
+          <motion.p
+            className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-500 dark:text-gray-400"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Transforming ideas into seamless digital experiences through modern
+            web development and intuitive design.
+          </motion.p>
+
+          <motion.div
+            className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <Link
+              href="#contact"
+              className="group flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 text-white shadow-lg transition-all hover:from-blue-600 hover:to-purple-700 hover:shadow-xl"
+              onClick={() => {
+                setActiveSection("Contact");
+                setTimeOfLastClick(Date.now());
+              }}
+            >
+              Get in Touch
+              <FiArrowUpRight className="transition-transform group-hover:-rotate-45" />
+            </Link>
+
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              className="flex items-center gap-2 rounded-full border border-gray-300 bg-white/80 px-8 py-4 text-gray-700 transition-all hover:bg-white hover:shadow-lg dark:border-gray-700 dark:bg-gray-800/80 dark:text-gray-200 dark:hover:bg-gray-800"
+            >
+              View Resume
+              <FaFileDownload className="shrink-0" />
+            </a>
+          </motion.div>
+
+          <motion.div
+            className="mt-12 flex justify-center gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <a
+              href="https://github.com/Vedantbhawsar"
+              target="_blank"
+              className="text-gray-400 transition-all hover:text-gray-600 dark:hover:text-gray-200"
+            >
+              <FaGithub className="h-7 w-7" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/vedantbhawsar/"
+              target="_blank"
+              className="text-gray-400 transition-all hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              <FaLinkedin className="h-7 w-7" />
+            </a>
+          </motion.div>
         </div>
-      </motion.div>
-    </section>
-  );
-}
 
-export function GridBackground({ children }: { children: ReactNode }) {
-  return (
-    <div className="h-[60rem] w-full dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
-      {/* Radial gradient for the container to give a faded look */}
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-      {children}
-    </div>
+        {/* Animated scroll indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+        >
+          <div className="h-8 w-5 rounded-full border-2 border-gray-400 dark:border-gray-600">
+            <motion.div
+              className="mx-auto mt-1 h-2 w-1 rounded-full bg-gray-400 dark:bg-gray-600"
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            />
+          </div>
+        </motion.div>
+      </section>
+    </>
   );
 }

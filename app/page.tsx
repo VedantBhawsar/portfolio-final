@@ -6,12 +6,8 @@ import Skills from "@/components/skills";
 
 export default function Home() {
   return (
-
     <main className="flex flex-col items-center px-4">
-      {/* <SectionDivider /> */}
       <About />
-      {/* <BackgroundLines className="mx-auto">
-      </BackgroundLines> */}
       <Projects />
       <Skills />
       <Experience />

@@ -11,56 +11,50 @@ export default function About() {
   return (
     <motion.section
       ref={ref}
-      className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
+      className="relative mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
       id="about"
     >
+      {/* Background Gradient */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-blue-100/20 to-purple-100/20 dark:from-indigo-900/10 dark:to-violet-900/10 blur-3xl" />
+      
       <SectionHeading>About me</SectionHeading>
-      <motion.p className="mb-3">
-        I am currently pursuing a degree in{" "}
-        <span className="font-medium">Computer Engineering</span> and am in my
-        third year of studies. My journey into the world of programming was
-        driven by my passion for{" "}
-        <span className="font-medium">problem-solving</span> and the thrill of
-        tackling challenging tasks. One of my favorite aspects of programming is
-        the satisfaction that comes from finding solutions to complex problems.
-      </motion.p>
-      <motion.p className="mb-3">
-        During my studies, I have worked on several projects, with the most
-        notable being <span className="font-medium">Ninjanex</span>, an anime
-        streaming application. This project was built using{" "}
-        <span className="font-medium">Electron.js</span> for the front end, and
-        the backend was powered by{" "}
-        <span className="font-medium">Express.js</span>,{" "}
-        <span className="font-medium">Prisma ORM</span>, and a{" "}
-        <span className="font-medium">PostgreSQL database</span>. This
-        experience solidified my skills and confirmed my love for full-stack
-        development.
-      </motion.p>
-      <motion.p className="mb-3">
-        I am particularly comfortable with{" "}
-        <span className="font-medium">Next.js 14</span>,{" "}
-        <span className="font-medium">Node.js</span>, and{" "}
-        <span className="font-medium">Tailwind CSS</span>. Currently, I am
-        expanding my knowledge in{" "}
-        <span className="font-medium">system design</span> and have also gained
-        proficiency in <span className="font-medium">Docker</span>. These skills
-        and my continuous learning mindset are preparing me for my goal of
-        becoming a{" "}
-        <span className="font-medium">full-time full-stack developer</span>.
+      
+      <motion.p 
+        className="mb-3"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+      >
+        I'm a third-year <span className="font-medium">Computer Engineering</span> student passionate about solving complex problems through code. My journey began with competitive programming, where I developed a strong foundation in algorithms and data structures, eventually leading me to explore full-stack development.
       </motion.p>
 
-      <motion.p>
-        Beyond programming, I enjoy{" "}
-        <span className="font-medium">traveling</span>,{" "}
-        <span className="font-medium">gaming</span>, and{" "}
-        <span className="font-medium">watching anime</span>. These interests not
-        only help me unwind but also inspire creativity in my projects. I am
-        excited to continue learning and growing in the tech field and look
-        forward to contributing to innovative projects as a full-stack
-        developer.
+      <motion.p 
+        className="mb-3"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+      >
+        My core expertise lies in modern web development with <span className="font-medium">Next.js 14</span> and <span className="font-medium">TypeScript</span>. I've built scalable applications like <span className="font-medium">Ninjanex</span> - an anime streaming platform handling thousands of users, using <span className="font-medium">Electron.js</span> for the frontend and <span className="font-medium">Express.js</span> with <span className="font-medium">PostgreSQL</span> for the backend. This experience taught me valuable lessons in performance optimization and system design.
+      </motion.p>
+
+      <motion.p 
+        className="mb-3"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
+        Currently expanding my skills in <span className="font-medium">cloud infrastructure</span> and <span className="font-medium">microservices architecture</span>, I'm focusing on building maintainable systems that balance technical rigor with user experience. My toolkit includes <span className="font-medium">Node.js</span>, <span className="font-medium">Tailwind CSS</span>, and <span className="font-medium">Docker</span>, with continuous learning through tech communities and open-source contributions.
+      </motion.p>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+      >
+        When not coding, I analyze animation storytelling techniques and explore outdoor photography. These creative pursuits inform my approach to building intuitive interfaces that resonate emotionally while maintaining technical excellence. I'm eager to contribute to impactful projects and grow alongside innovative teams in the tech industry.
       </motion.p>
     </motion.section>
   );

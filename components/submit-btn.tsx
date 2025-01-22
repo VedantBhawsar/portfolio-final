@@ -2,35 +2,38 @@ import React from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import { experimental_useFormStatus as useFormStatus } from "react-dom";
 import { TailSpin } from "react-loader-spinner";
+import { motion } from "framer-motion";
 
 export default function SubmitBtn() {
   const { pending } = useFormStatus();
 
   return (
-    <button
+    <motion.button
       type="submit"
-      className="group flex items-center justify-center gap-2 mt-3 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 dark:bg-white dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65"
+      className="group flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-3 text-white shadow-lg transition-all hover:from-blue-600 hover:to-purple-700 hover:shadow-xl"
       disabled={pending}
     >
       {pending ? (
-        <div className="flex items-center gap-3">
+        <div className="flex items-center justify-center">
           <TailSpin
             visible={true}
-            height="20"
-            width="20"
-            color="#fff"
-            ariaLabel="loading"
+            height="24"
+            width="24"
+            color="#ffffff"
+            ariaLabel="tail-spin-loading"
             radius="1"
-            wrapperStyle={{}}
           />
-          {/* <span className="text-xs">Sending</span> */}
         </div>
       ) : (
-        <>
-          Send{" "}
-          <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
-        </>
+        <motion.span
+          className="flex items-center gap-2"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
+        >
+          Send Message
+          <FaPaperPlane className="w-4 h-4 transition-transform group-hover:rotate-45" />
+        </motion.span>
       )}
-    </button>
+    </motion.button>
   );
 }

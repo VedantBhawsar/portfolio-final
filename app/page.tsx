@@ -1,3 +1,4 @@
+import React from "react";
 import About from "@/components/about";
 import Contact from "@/components/contact";
 import Experience from "@/components/experience";

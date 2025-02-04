@@ -32,21 +32,6 @@ export const metadata = {
     description: "Explore Vedant's work as a full-stack developer.",
     url: "https://your-portfolio-url.com", // Replace with your actual URL
     site_name: "Vedant's Portfolio",
-    //     images: [
-    //       {
-    //         url: "https://your-portfolio-url.com/your-image.jpg", // Replace with an actual image URL
-    //         width: 800,
-    //         height: 600,
-    //         alt: "Vedant's Portfolio Image"
-    //       }
-    //     ],
-    //     type: "website",
-    //   },
-    //   twitter: {
-    //     card: "summary_large_image",
-    //     title: "Vedant | Personal Portfolio",
-    //     description: "Explore Vedant's work as a full-stack developer.",
-    //     image: "https://your-portfolio-url.com/your-image.jpg", // Replace with an actual image URL
   },
 };
 
@@ -57,23 +42,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="!scroll-smooth">
-    <body
-      className={`${poppins.className} bg-gradient-to-tr from-blue-50/30 to-indigo-50/30 text-gray-950 relative dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900 dark:text-gray-50 dark:text-opacity-90 antialiased`}
-    >
-      <ThemeContextProvider>
-        <ActiveSectionContextProvider>
-          <>
-            <Intro />
-          </>
-          <Analytics />
-          <Header />
-          {children}
-          <Footer />
-          <Toaster position="top-right" />
-          <ThemeSwitch />
-        </ActiveSectionContextProvider>
-      </ThemeContextProvider>
-    </body>
-  </html>
+      <body
+        className={`${poppins.className} bg-gradient-to-tr from-blue-50/30 to-indigo-50/30 text-gray-950 relative dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900 dark:text-gray-50 dark:text-opacity-90 antialiased`}
+      >
+        <ThemeContextProvider>
+          <ActiveSectionContextProvider>
+            <>
+              <Intro />
+            </>
+            <Analytics />
+            <Header />
+            {children}
+            <Footer />
+            <Toaster position="top-right" />
+            <ThemeSwitch />
+          </ActiveSectionContextProvider>
+        </ThemeContextProvider>
+      </body>
+    </html>
   );
 }

@@ -5,6 +5,8 @@ import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import Project, { CreateProject } from "./project";
 import { useSectionInView } from "@/lib/hooks";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.5);
@@ -18,6 +20,12 @@ export default function Projects() {
             <Project {...project} />
           </React.Fragment>
         ))}
+        <div className="flex justify-center w-full col-span-2">
+          <Link href="https://github.com/vedantbhawsar">
+            <Button>View more on github</Button>
+          </Link>
+        </div>
+
         {projectsData.length % 2 !== 0 && <CreateProject />}
       </div>
     </section>

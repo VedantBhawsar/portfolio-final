@@ -5,6 +5,9 @@ import { LuGraduationCap } from "react-icons/lu";
 import twitterImage from "@/public/twitter.png";
 import ninjanexImage from "@/public/ninjanex.png";
 import petShopImage from "@/public/petshop.png";
+import messagengerImage from "@/public/messager.png";
+import diareyBlogImage from "@/public/diaryblog.png";
+import animeStreamingImage from "@/public/anime-streaming.png";
 
 export const links = [
   {
@@ -105,6 +108,15 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+    title: "Anime verse",
+    description:
+      "Animeverse is anime streaming website build with nextjs and tailwind css. It has a vast collection of anime series and movies.",
+    demoUrl: "https://anime-streaming-25rq.vercel.app/",
+    githubUrl: "https://github.com/VedantBhawsar/anime-streaming",
+    imageUrl: animeStreamingImage,
+    tags: ["Next.js", "Prisma", "Tailwind", "React Query"],
+  },
+  {
     title: "Ninjanex",
     description:
       "Ninjanex is an anime streaming app for Windows and Ubuntu, featuring a user-friendly interface, extensive anime library, and high-quality streaming.",
@@ -112,6 +124,15 @@ export const projectsData = [
     imageUrl: ninjanexImage,
     githubUrl: "https://github.com/VedantBhawsar/ninjanex",
     demoUrl: "https://github.com/VedantBhawsar/ninjanex",
+  },
+  {
+    title: "Messenger",
+    tags: ["Pusher", "Next.js", "Prisma", "Tailwind"],
+    githubUrl: "https://github.com/VedantBhawsar/messenger-clone",
+    imageUrl: messagengerImage,
+    demoUrl: "https://messenger-clone-black.vercel.app/",
+    description:
+      "Messenger is a real-time chat application with user authentication, online status, and message history for seamless communication.",
   },
   {
     title: "TwitClone",
@@ -130,6 +151,16 @@ export const projectsData = [
     imageUrl: petShopImage,
     githubUrl: "https://github.com/VedantBhawsar/petshop",
     demoUrl: "https://petshoppy.vercel.app/",
+  },
+
+  {
+    title: "Diary Blog",
+    description:
+      "Diary Blog is a personal blogging platform for sharing thoughts, experiences, and stories with a global audience.",
+    tags: ["Next.js", "Prisma", "Tailwind", "React Query"],
+    imageUrl: diareyBlogImage,
+    githubUrl: "https://github.com/VedantBhawsar/next-blog",
+    demoUrl: "https://diary-blog.vercel.app/",
   },
 ] as const;
 
@@ -152,8 +183,6 @@ export const skillsData = [
   // Backend Technologies
   "Node.js",
   "Express.js",
-  "NestJS",
-  "Apollo Server",
   "Prisma",
   "GraphQL",
   "REST API",
@@ -175,12 +204,8 @@ export const skillsData = [
   "Linux",
   "Nginx",
   "AWS (EC2, S3)",
-  "Vercel",
-  "Grafana",
 
   // Monitoring & Logging
-  "Prometheus",
-  "Grafana",
 
   // Testing & Linting
   "Jest",

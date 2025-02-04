@@ -2,21 +2,8 @@
 
 import { validateEmail, validateEmailData } from "@/lib/utils";
 import { emailTransporter } from "@/lib/emailTransport";
-import { UserInfo } from "@/@types/userData";
 
-const MIN_LENGTH = 100; // minimum message length
-
-async function fetchUser() {
-  try {
-    const response = await fetch(process.env.API_URL + "/api/user", {
-      method: "GET",
-    });
-    const data = await response.json();
-    return data;
-  } catch (error: any) {
-    console.log(error);
-  }
-}
+const MIN_LENGTH = 100;
 
 export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get("senderEmail") as string;
